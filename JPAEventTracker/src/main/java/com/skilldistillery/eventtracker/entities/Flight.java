@@ -1,6 +1,7 @@
 package com.skilldistillery.eventtracker.entities;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,10 +38,10 @@ public class Flight {
 	private LocalDateTime arrivalTime;
 
 	@Column(name = "flight_duration")
-	private LocalDateTime flightDuration;
+	private LocalTime flightDuration;
 
 	@Column(name = "number_passangers")
-	private Integer numberPassengers;
+	private int numberPassengers;
 
 	private boolean arrived;
 
@@ -51,7 +52,7 @@ public class Flight {
 	}
 
 	public Flight(int id, String airline, int flightNumber, String departureLocation, String arrivalLocation,
-			LocalDateTime departureTime, LocalDateTime arrivalTime, Integer numberPassengers) {
+			LocalDateTime departureTime, LocalDateTime arrivalTime, int numberPassengers) {
 		super();
 		this.id = id;
 		this.airline = airline;
@@ -63,8 +64,8 @@ public class Flight {
 		this.numberPassengers = numberPassengers;
 	}
 
-	// G E T T E R S A N D S E T T E R S
-
+	// G E T T E R S  A N D  S E T T E R S
+ 
 	public int getId() {
 		return id;
 	}
@@ -121,11 +122,11 @@ public class Flight {
 		this.arrivalTime = arrivalTime;
 	}
 
-	public LocalDateTime getFlightDuration() {
+	public LocalTime getFlightDuration() {
 		return flightDuration;
 	}
 
-	public void setFlightDuration(LocalDateTime flightDuration) {
+	public void setFlightDuration(LocalTime flightDuration) {
 		this.flightDuration = flightDuration;
 	}
 
@@ -133,7 +134,7 @@ public class Flight {
 		return numberPassengers;
 	}
 
-	public void setNumberPassengers(Integer numberPassengers) {
+	public void setNumberPassengers(int numberPassengers) {
 		this.numberPassengers = numberPassengers;
 	}
 
@@ -170,7 +171,7 @@ public class Flight {
 		result = prime * result + ((flightDuration == null) ? 0 : flightDuration.hashCode());
 		result = prime * result + flightNumber;
 		result = prime * result + id;
-		result = prime * result + ((numberPassengers == null) ? 0 : numberPassengers.hashCode());
+		result = prime * result + numberPassengers;
 		return result;
 	}
 
@@ -219,10 +220,7 @@ public class Flight {
 			return false;
 		if (id != other.id)
 			return false;
-		if (numberPassengers == null) {
-			if (other.numberPassengers != null)
-				return false;
-		} else if (!numberPassengers.equals(other.numberPassengers))
+		if (numberPassengers != other.numberPassengers)
 			return false;
 		return true;
 	}

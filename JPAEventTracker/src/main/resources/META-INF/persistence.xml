@@ -10,7 +10,7 @@
 
 
 		<!--Class Definitions -->
-	<class>com.skilldistillery.xtreme.entities.Post</class>
+	<class>com.skilldistillery.eventtracker.Flight</class>
 	
 
 		<properties>

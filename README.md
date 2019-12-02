@@ -84,6 +84,16 @@ This program is a simple flight event tracker, using Spring Boot, Spring Data JP
 ### How to run:
 It must be run within the Spring Tool Suite IDE. Also, the user may verify mappings function correctly by utilizing Postman.
 
+### API Mapping List
+
+
+| CRUD Op. | HTTP Verb | URI                  | Request Body | Response Body |
+|----------|-----------|----------------------|--------------|---------------|
+| Read     | GET       | `/api/flights`      |              | Collection of representations of all flights |
+| Read     | GET       | `/api/flights/2`   |              | Gets Flight with ID of '2' |
+| Create   | POST      | `/api/flights`      | Representation of a new flight | Returns the created flight|
+| Update   | PUT       | `/api/flights/2`   | Representation of a new version of flight `2` | |
+| Delete   | DELETE    | `/api/books/2`   |              | true or false |
 
 ### Technologies used:
 

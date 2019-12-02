@@ -3,7 +3,7 @@
 ## Flights
 
 ### Project Requirements>
-<hr
+<hr>
 ## Event Tracker
 
 ### Overview
@@ -86,14 +86,15 @@ It must be run within the Spring Tool Suite IDE. Also, the user may verify mappi
 
 ### API Mapping List
 
-
+<hr>
 | CRUD Op. | HTTP Verb | URI                  | Request Body | Response Body |
 |----------|-----------|----------------------|--------------|---------------|
-| Read     | GET       | `/api/flights`      |              | Collection of representations of all flights |
-| Read     | GET       | `/api/flights/2`   |              | Gets Flight with ID of '2' |
-| Create   | POST      | `/api/flights`      | Representation of a new flight | Returns the created flight|
-| Update   | PUT       | `/api/flights/2`   | Representation of a new version of flight `2` | |
-| Delete   | DELETE    | `/api/books/2`   |              | true or false |
+| Read     | GET       | `EventTracker/api/flights`      |              | Collection of representations of all flights |
+| Read     | GET       | `EventTracker/api/flights/2`   |              | Gets Flight with ID of '2' |
+| Create   | POST      | `EventTracker/api/flights`      | Representation of a new flight | Returns the created flight|
+| Update   | PUT       | `EventTracker/api/flights/2`   | Representation of a new version of flight `2` | |
+| Delete   | DELETE    | `EventTracker/api/books/2`   |              | true or false |
+<hr>
 
 ### Technologies used:
 

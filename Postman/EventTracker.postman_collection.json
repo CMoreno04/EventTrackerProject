@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "14ea70dd-72a4-4059-96ea-2e768fceac8c",
+		"name": "EventTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all flights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get flight by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create flight",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"airline\": \"Spirit\",\n    \"flightNumber\": 787,\n    \"departureLocation\": \"Denver\",\n    \"arrivalLocation\": \"Aguadilla\",\n    \"departureTime\": \"2019-12-01T02:30:00\",\n    \"arrivalTime\": \"2019-12-01T12:00:00\",\n    \"flightDuration\": \"02:30:00\",\n    \"numberPassengers\": 350,\n    \"arrived\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/flights",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"flights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update flight ",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 0,\n    \"airline\": \"Frontier\",\n    \"flightNumber\": 787,\n    \"departureLocation\": \"Denver\",\n    \"arrivalLocation\": \"Aguadilla\",\n    \"departureTime\": \"2019-12-01T01:30:00\",\n    \"arrivalTime\": \"2019-12-01T13:00:00\",\n    \"numberPassengers\": 350,\n    \"arrived\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/flights/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"flights",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete flight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

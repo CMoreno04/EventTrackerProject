@@ -82,7 +82,7 @@ If you get a zero on the project, you can upgrade to a score of *.5* if you turn
 This program is a simple flight event tracker, using Spring Boot, Spring Data JPA, and RestAPI the project currently has no front-end.
 
 ### How to run:
-It must be run within the Spring Tool Suite IDE. Also, the user may verify mappings function correctly by utilizing Postman.
+It must be run within the Spring Tool Suite IDE or AWS IP address of http://18.223.75.248:8080/. Also, the user may verify mappings function correctly by utilizing Postman.
 
 ### API Mapping List
 

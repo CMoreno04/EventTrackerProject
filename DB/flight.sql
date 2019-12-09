@@ -22,14 +22,14 @@ DROP TABLE IF EXISTS `flight` ;
 
 CREATE TABLE IF NOT EXISTS `flight` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `airline` VARCHAR(45) NOT NULL,
-  `flight_number` INT NOT NULL DEFAULT 0,
-  `departure_location` VARCHAR(45) NOT NULL,
-  `arrival_location` VARCHAR(45) NOT NULL,
-  `departure_time` DATETIME NULL,
-  `flight_duration` TIME NULL,
-  `arrival_time` DATETIME NULL,
-  `number_passangers` INT NOT NULL,
+  `airline` VARCHAR(45) NULL,
+  `flight_number` INT NULL DEFAULT 0,
+  `departure_location` VARCHAR(45) NULL,
+  `arrival_location` VARCHAR(45) NULL,
+  `departure_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `flight_duration` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `arrival_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `number_passangers` INT NULL,
   `arrived` TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -51,8 +51,12 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `eventdb`;
-INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (1, 'United', 393, 'Denver', 'Portland', '2019-12-01 02:30:00', '02:30:00', '2019-12-01 05:00:00', 10, 0);
-INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (2, 'American Airlines', 787, 'Portland', 'Denver ', '2019-12-01 02:30:00', '02:30:00', '2019-12-01 05:00:00', 5, 0);
+INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (1, 'United', 393, 'Denver', 'Portland', '2019-12-01 02:30:00', '2019-12-01 02:30:00', '2019-12-25 01:00:00', 200, false);
+INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (2, 'Frontier', 787, 'San Juan', 'Denver', '2019-12-01 02:30:00', '2019-12-01 02:30:00', '2019-12-25 02:30:00', 300, false);
+INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (3, 'American Airlines', 234, 'Orlando', 'Denver', '2019-12-01 02:30:00', '2019-12-01 02:30:00', '2019-12-25 05:00:00', 250, false);
+INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (4, 'Southwest', 365, 'Miami', 'Dubai', '2019-12-01 02:30:00', '2019-12-01 02:30:00', '2019-12-25 05:00:00', 123, false);
+INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (5, 'Spirit', 768, 'Alaska', 'Mexico', '2019-12-01 02:30:00', '2019-12-01 02:30:00', '2019-12-25 05:00:00', 243, false);
+INSERT INTO `flight` (`id`, `airline`, `flight_number`, `departure_location`, `arrival_location`, `departure_time`, `flight_duration`, `arrival_time`, `number_passangers`, `arrived`) VALUES (DEFAULT, NULL, NULL, NULL, NULL, DEFAULT, DEFAULT, '', NULL, DEFAULT);
 
 COMMIT;
 

@@ -1,6 +1,7 @@
 package com.skilldistillery.eventtracker.entities;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,10 +38,12 @@ public class Flight {
 	private LocalDateTime arrivalTime;
 
 	@Column(name = "flight_duration")
-	private LocalDateTime flightDuration;
+	private LocalTime flightDuration;
+
+	
 
 	public Flight(int id, String airline, int flightNumber, String departureLocation, String arrivalLocation,
-			LocalDateTime departureTime, LocalDateTime arrivalTime, LocalDateTime flightDuration, int numberPassengers,
+			LocalDateTime departureTime, LocalDateTime arrivalTime, LocalTime flightDuration, int numberPassengers,
 			boolean arrived) {
 		super();
 		this.id = id;
@@ -137,13 +140,12 @@ public class Flight {
 		this.arrivalTime = arrivalTime;
 	}
 
-	
 
-	public LocalDateTime getFlightDuration() {
+	public LocalTime getFlightDuration() {
 		return flightDuration;
 	}
 
-	public void setFlightDuration(LocalDateTime flightDuration) {
+	public void setFlightDuration(LocalTime flightDuration) {
 		this.flightDuration = flightDuration;
 	}
 

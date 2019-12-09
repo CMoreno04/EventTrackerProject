@@ -194,7 +194,7 @@ function create() {
 		arrivalLocation : document.getElementsByName('arrLoc')[0].value,
 		departureTime : document.getElementsByName('depTim')[0].value,
 		arrivalTime : document.getElementsByName('arrTim')[0].value,
-		numberPassengers : document.getElementsByName('numPass').value,
+		numberPassengers : document.getElementsByName('numPass')[0].value,
 		arrived : false
 	};
 
@@ -371,6 +371,7 @@ function updateFlight(flight, id) {
 	airlin.setAttribute('type', "text");
 	airlin.setAttribute('name', "airlin");
 	airlin.setAttribute('placeholder', flight.airline);
+	airlin.setAttribute('value', flight.airline);
 
 	var flightNu = document.createElement('input');
 	flightNu.setAttribute('type', "number");

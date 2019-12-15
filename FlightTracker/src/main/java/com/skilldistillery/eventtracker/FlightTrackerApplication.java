@@ -3,6 +3,9 @@ package com.skilldistillery.eventtracker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class FlightTrackerApplication {
@@ -13,5 +16,9 @@ public class FlightTrackerApplication {
 
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(FlightTrackerApplication.class);
+	}
+	@Bean
+	public PasswordEncoder configurePasswordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 }

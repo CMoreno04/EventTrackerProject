@@ -1,19 +1,19 @@
 package com.skilldistillery.eventtracker.services;
 
-import java.util.List;
+import java.util.Set;
 
 import com.skilldistillery.eventtracker.entities.Flight;
 
 public interface FlightService {
 
-	public List<Flight> findAllFlights();
+	public Set<Flight> index(String username);
 
-	public Flight findFlightById(Integer id);
+	public Flight show(String username, Integer id);
 
-	public Flight createFlight(Flight flight);
-	
-	public boolean deleteFlight(int id);
-	
-	public Flight updateFlight(int id, Flight flight);
+	public Flight create(String username, Flight flight);
+
+	public boolean destroy(String username, int id);
+
+	public Flight update(String username, int id, Flight flight);
 
 }

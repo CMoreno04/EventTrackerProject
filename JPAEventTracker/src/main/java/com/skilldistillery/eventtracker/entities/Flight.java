@@ -1,13 +1,14 @@
 package com.skilldistillery.eventtracker.entities;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -37,26 +38,9 @@ public class Flight {
 	@Column(name = "arrival_time")
 	private LocalDateTime arrivalTime;
 
-	@Column(name = "flight_duration")
-	private LocalTime flightDuration;
-
-	
-
-	public Flight(int id, String airline, int flightNumber, String departureLocation, String arrivalLocation,
-			LocalDateTime departureTime, LocalDateTime arrivalTime, LocalTime flightDuration, int numberPassengers,
-			boolean arrived) {
-		super();
-		this.id = id;
-		this.airline = airline;
-		this.flightNumber = flightNumber;
-		this.departureLocation = departureLocation;
-		this.arrivalLocation = arrivalLocation;
-		this.departureTime = departureTime;
-		this.arrivalTime = arrivalTime;
-		this.flightDuration = flightDuration;
-		this.numberPassengers = numberPassengers;
-		this.arrived = arrived;
-	}
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 
 	@Column(name = "number_passangers")
 	private int numberPassengers;
@@ -69,21 +53,22 @@ public class Flight {
 		super();
 	}
 
-	public Flight(int id, String airline, int flightNumber, String departureLocation, String arrivalLocation,
-			LocalDateTime departureTime, LocalDateTime arrivalTime, int numberPassengers) {
+	public Flight(String airline, int flightNumber, String departureLocation, String arrivalLocation,
+			LocalDateTime departureTime, LocalDateTime arrivalTime, User user, int numberPassengers, boolean arrived) {
 		super();
-		this.id = id;
 		this.airline = airline;
 		this.flightNumber = flightNumber;
 		this.departureLocation = departureLocation;
 		this.arrivalLocation = arrivalLocation;
 		this.departureTime = departureTime;
 		this.arrivalTime = arrivalTime;
+		this.user = user;
 		this.numberPassengers = numberPassengers;
+		this.arrived = arrived;
 	}
 
-	// G E T T E R S  A N D  S E T T E R S
- 
+	// G E T T E R S A N D S E T T E R S
+
 	public int getId() {
 		return id;
 	}
@@ -140,13 +125,13 @@ public class Flight {
 		this.arrivalTime = arrivalTime;
 	}
 
-
-	public LocalTime getFlightDuration() {
-		return flightDuration;
+	
+	public User getUser() {
+		return user;
 	}
 
-	public void setFlightDuration(LocalTime flightDuration) {
-		this.flightDuration = flightDuration;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public int getNumberPassengers() {
@@ -171,8 +156,8 @@ public class Flight {
 	public String toString() {
 		return "Flight [id=" + id + ", airline=" + airline + ", flightNumber=" + flightNumber + ", departureLocation="
 				+ departureLocation + ", arrivalLocation=" + arrivalLocation + ", departureTime=" + departureTime
-				+ ", arrivalTime=" + arrivalTime + ", flightDuration=" + flightDuration + ", numberPassengers="
-				+ numberPassengers + ", arrived=" + arrived + "]";
+				+ ", arrivalTime=" + arrivalTime + ", user=" + user + ", numberPassengers=" + numberPassengers
+				+ ", arrived=" + arrived + "]";
 	}
 
 	// H A S H A N D E Q U A L S
@@ -187,10 +172,10 @@ public class Flight {
 		result = prime * result + (arrived ? 1231 : 1237);
 		result = prime * result + ((departureLocation == null) ? 0 : departureLocation.hashCode());
 		result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
-		result = prime * result + ((flightDuration == null) ? 0 : flightDuration.hashCode());
 		result = prime * result + flightNumber;
 		result = prime * result + id;
 		result = prime * result + numberPassengers;
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
@@ -230,16 +215,16 @@ public class Flight {
 				return false;
 		} else if (!departureTime.equals(other.departureTime))
 			return false;
-		if (flightDuration == null) {
-			if (other.flightDuration != null)
-				return false;
-		} else if (!flightDuration.equals(other.flightDuration))
-			return false;
 		if (flightNumber != other.flightNumber)
 			return false;
 		if (id != other.id)
 			return false;
 		if (numberPassengers != other.numberPassengers)
+			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
 			return false;
 		return true;
 	}

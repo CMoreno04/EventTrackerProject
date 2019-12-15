@@ -4,7 +4,6 @@
 
 ### Project Requirements>
 
-<hr>
 
 ### Overview
 

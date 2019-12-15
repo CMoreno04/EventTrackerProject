@@ -11,6 +11,7 @@
 
 		<!--Class Definitions -->
 	<class>com.skilldistillery.eventtracker.Flight</class>
+	<class>com.skilldistillery.eventtracker.User</class>
 	
 
 		<properties>

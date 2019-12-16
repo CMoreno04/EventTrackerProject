@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "flight")
 public class Flight {
@@ -40,6 +42,7 @@ public class Flight {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
+	@JsonIgnore
 	private User user;
 
 	@Column(name = "number_passangers")
@@ -149,6 +152,7 @@ public class Flight {
 	public void setArrived(boolean arrived) {
 		this.arrived = arrived;
 	}
+	
 
 	// T O S T R I N G
 

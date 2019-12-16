@@ -10,8 +10,8 @@
 
 
 		<!--Class Definitions -->
-	<class>com.skilldistillery.eventtracker.Flight</class>
-	<class>com.skilldistillery.eventtracker.User</class>
+	<class>com.skilldistillery.eventtracker.entities.Flight</class>
+	<class>com.skilldistillery.eventtracker.entities.User</class>
 	
 
 		<properties>

@@ -1,3 +1,5 @@
+import { AddFlightComponent } from './components/add-flight/add-flight.component';
+import { FlightsComponent } from './components/flights/flights.component';
 import { Flight } from './models/flight';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +13,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'flight', component: Flight },
+  { path: 'flight', component: FlightsComponent },
+  { path: 'add', component: AddFlightComponent },
   { path: '**', component: NotfoundComponent }
 ];
 

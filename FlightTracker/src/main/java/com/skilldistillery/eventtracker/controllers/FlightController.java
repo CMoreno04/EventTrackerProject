@@ -28,12 +28,12 @@ public class FlightController {
 	@Autowired
 	private FlightService svc;
 
-	@GetMapping("todos")
+	@GetMapping("flights")
 	public Set<Flight> index(Principal prin) {
 		return svc.index(prin.getName());
 	}
 
-	@GetMapping("todos/{id}")
+	@GetMapping("flights/{id}")
 	private Flight getById(@PathVariable int id, HttpServletRequest req, HttpServletResponse resp, Principal prin) {
 		try {
 			StringBuffer url = req.getRequestURL();
@@ -46,7 +46,7 @@ public class FlightController {
 		}
 	}
 
-	@PostMapping("todos")
+	@PostMapping("flights")
 	private Flight createTodo(@RequestBody Flight flight, HttpServletResponse resp, HttpServletRequest req, Principal prin) {
 
 		Flight newTodo = svc.create(prin.getName(), flight);
@@ -61,7 +61,7 @@ public class FlightController {
 		}
 	}
 
-	@PutMapping("todos/{id}")
+	@PutMapping("flights/{id}")
 	private Flight updateTodo(@RequestBody Flight todo, @PathVariable int id, HttpServletResponse resp,
 			HttpServletRequest req, Principal prin) {
 
@@ -78,7 +78,7 @@ public class FlightController {
 		}
 	}
 
-	@DeleteMapping("todos/{id}")
+	@DeleteMapping("flights/{id}")
 	private boolean deleteTodo(@PathVariable int id, HttpServletResponse resp, HttpServletRequest req, Principal prin) {
 
 		try {

@@ -13,7 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
-
+import { FlightsComponent } from './components/flights/flights.component';
+import { AddFlightComponent } from './components/add-flight/add-flight.component';
+import { ButtonsModule, WavesModule, IconsModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +26,19 @@ import { RegisterComponent } from './components/register/register.component';
     LogoutComponent,
     NotfoundComponent,
     FlightDurationPipe,
-    RegisterComponent
+    RegisterComponent,
+    FlightsComponent,
+    AddFlightComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
-  providers: [
+  imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    NgbModule,
+    HttpClientModule, ButtonsModule, WavesModule, IconsModule, MDBBootstrapModule
+  ],
+  providers: [
+
     FlightService,
     FlightDurationPipe
   ],

@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col order-last"></div>
+    <div class="col-xl-9">
+      <form>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="airline">Airline:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="airline"
+              [(ngModel)]="flight.airline"
+            />
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label for="departureTime">Flight Number:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="flightNumber"
+              [(ngModel)]="flight.flightNumber"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="departureLocation">Departure Location:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="departureLocation"
+              [(ngModel)]="flight.departureLocation"
+            />
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label for="departureTime">Departure Time:</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              name="departureTime"
+              [(ngModel)]="flight.departureTime"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="arrivalLocation">Arrival Location:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="arrivalLocation"
+              [(ngModel)]="flight.arrivalLocation"
+            />
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label for="arrivalTime">Arrival Time:</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              name="arrivalTime"
+              [(ngModel)]="flight.arrivalTime"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-2 mb-3">
+              <button
+                type="button"
+                (click)="createFlight(flight)"
+                class="btn btn-warning btn-lg"
+              >
+                Submit
+              </button>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg "
+                [routerLink]="['/flight']"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div class="col order-first"></div>
+  </div>
+</div>

@@ -7,10 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
 @Entity
+@Table(name = "user")
 public class User {
 
 	@Id
@@ -27,8 +30,8 @@ public class User {
 
 	private String role;
 
-	@ManyToMany(mappedBy = "user")
 	@JsonIgnore
+	@ManyToMany(mappedBy = "user")
 	private List<Flight> Flights;
 
 	public User() {
@@ -103,7 +106,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", username=" + username + ", password=" + password
-				+ ", enabled=" + enabled + ", role=" + role + ", Flights=" + Flights + "]";
+				+ ", enabled=" + enabled + ", role=" + role + "]";
 	}
 
 	@Override
@@ -161,15 +164,5 @@ public class User {
 		return true;
 	}
 
-	public User(int id, String email, String username, String password, boolean enabled, String role,
-			List<Flight> flights) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.enabled = enabled;
-		this.role = role;
-		Flights = flights;
-	}
+
 }

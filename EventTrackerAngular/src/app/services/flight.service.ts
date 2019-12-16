@@ -72,7 +72,7 @@ export class FlightService {
     );
   }
 
-  update(Flight: Flight, id: number) {
+  update(flight: Flight, id: number) {
 
 
     const credentials = this.authSvc.getCredentials();
@@ -85,7 +85,7 @@ export class FlightService {
       })
     };
 
-    return this.http.put<Flight>(this.url + '/' + id,Flight, httpOptions).pipe(
+    return this.http.put<Flight>(this.url + '/' + id, flight, httpOptions).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError('KABOOM');
@@ -93,7 +93,7 @@ export class FlightService {
     );
   }
 
-  create(newFlightFlight: Flight) {
+  create(newFlight: Flight) {
     const credentials = this.authSvc.getCredentials();
     // Send credentials as Authorization header (this is spring security convention for basic auth)
 
@@ -105,7 +105,7 @@ export class FlightService {
       })
     };
 
-    return this.http.post<Flight>(this.url, newFlightFlight, httpOptions).pipe(
+    return this.http.post<Flight>(this.url, newFlight, httpOptions).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError('KABOOM');

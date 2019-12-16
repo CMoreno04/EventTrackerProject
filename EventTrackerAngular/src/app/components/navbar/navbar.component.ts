@@ -8,13 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private authSvc: AuthService, private route: Router) { }
-  public logged: boolean;
-  public is: false;
+  constructor(private authSvc: AuthService, private route: Router) {}
+  public isMenuCollapsed = true;
+  logged: boolean;
   ngOnInit() {
     this.logged = this.authSvc.checkLogin();
   }
-  isCollapsed() {
+  checkIfLogged() {
     return this.authSvc.checkLogin();
   }
+  logout() {
+    if (this.authSvc.checkLogin()) {
+      this.authSvc.logout();
+    } else {
+      this.route.navigateByUrl('login');
+    }
+  }
+
 }

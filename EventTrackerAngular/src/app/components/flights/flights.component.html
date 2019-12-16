@@ -1,0 +1,131 @@
+<div class="container">
+  <div class="row">
+    <div class="col order-last"></div>
+    <div class="col-xl-9">
+      <div *ngIf="selected">
+        <form>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="departureLocation">Departure Location:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="departureLocation"
+                placeholder="{{ editFlight.departureLocation }}"
+                [(ngModel)]="editFlight.departureLocation"
+              />
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="departureTime">Departure Time:</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                name="departureTime"
+                [(ngModel)]="editFlight.departureTime"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="arrivalLocation">Arrival Location:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="arrivalLocation"
+                [(ngModel)]="editFlight.arrivalLocation"
+              />
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="departureTime">Departure Time:</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                name="departureTime"
+                [(ngModel)]="editFlight.departureTime"
+              />
+            </div>
+          </div>
+          <div class="text-center">
+            <button
+              type="button"
+              (click)="update(editFlight)"
+              class="btn btn-primary btn-lg btn-block "
+            >
+              Submit
+            </button>
+            <br />
+            <button
+              type="button"
+              class="btn btn-secondary btn-lg btn-block"
+              (click)="selected = null; editTodo = null; reload()"
+            >
+              Back
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div *ngIf="!selected">
+        <div *ngFor="let flight of flights; trackBy: flight.id">
+          <div class="card">
+            <h3 class="card-header text-center">{{ flight.airline }}</h3>
+            <div class="card-body">
+              <h5 class="card-text text-center">
+                Flight Number {{ flight.flightNumber }}
+              </h5>
+              <br />
+              <p class="card-text text-center">
+                <strong>From: </strong> {{ flight.departureLocation }}
+                <br />
+                <strong>Departure Date: </strong>
+                {{ flight.departureTime | date: 'fullDate' }}
+                <br />
+                <strong>At: </strong>
+                {{ flight.departureTime | date: 'shortTime' }}
+              </p>
+
+              <br />
+
+              <p class="card-text text-center">
+                <strong>To: </strong> {{ flight.arrivalLocation }}
+                <br />
+                <strong>Arrival Date: </strong>
+                {{ flight.arrivalTime | date: 'fullDate' }}
+                <br />
+                <strong> At: </strong>
+                {{ flight.arrivalTime | date: 'shortTime' }}
+              </p>
+
+              <p class="card-text text-center">
+                <strong>Flight Duration: </strong> {{ flight | flightDuration }}
+              </p>
+              <br />
+              <br />
+              <div class="text-center">
+                <button
+                  type="button"
+                  (click)="delTask(flight.id)"
+                  class="btn btn-warning btn-lg btn-block "
+                >
+                  Delete
+                </button>
+                <br />
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-lg btn-block"
+                  (click)="setSelected(flight)"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="col order-first"></div>
+  </div>
+</div>

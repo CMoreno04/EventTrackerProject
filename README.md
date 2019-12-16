@@ -1,67 +1,44 @@
-# Event Tracker Project
-
-## Flights
+# Flight Tracker Project
 
 ### Project Requirements>
 
-
 ### Overview
+'Event Tracker' is a broad term for anything that keeps track of information over time. Examples of these applications are 'Mint' (financial tracking) and 'MyFitnessPal' (diet and exercise tracker). These are very involved applications with a huge feature set. You are embarking on a weekend project that you may or may not come back to afterwards, thus we would caution you to limit your scope significantly. Examples of limited scope would be 'Gas Tracker' (keep track of your fill ups and total mileage to determine dollar/gallon in your car) or 'Timesheet' (track time in and time out to calculate total hours at some rate of pay).  
 
-'Event Tracker' is a broad term for anything that keeps track of information over time. Examples of these applications are 'Mint' (financial tracking) and 'MyFitnessPal' (diet and exercise tracker). These are very involved applications with a huge feature set.
-
-You are embarking on a weekend project that you may or may not come back to afterwards, thus we would caution you to limit your scope significantly. Examples of limited scope would be 'Gas Tracker' (keep track of your fill ups and total mileage to determine dollar/gallon in your car) or 'Timesheet' (track time in and time out to calculate total hours at some rate of pay).  
+Last weekend we wrote the backend for our API that performed full CRUD on an event object. We are going to pick up where we left off and build a front end to manipulate and display this data to the client.
 
 ### Learning Objectives
-
-* Create a JPA Project
-  * Create a Java entity class POJO that models your database table.
-  * Map your POJO using JPA.
-
-* Configure a Spring Boot app to publish a REST API.
-  * Use Spring REST annotations.
-  * Use Spring Data JPA to perform all CRUD operations.
-  * Send and receive JSON.
+* Configure an Angular application
+* Use:
+  * Components
+  * Services
+  * Directives
+* Send / receive JSON  
+* Send asynchronous request to Java controller with `http`
 
 ### Where to start?
+1. Add angular functionality. Configure your application by bringing in dependencies and setting up the file structure.
 
-1. Create a new STS workspace for your project.
-   1. Initialize your workspace with `git`.
-   1. Associate your workspace with a Github repo named **EventTrackerProject**.
-1. Use MySQL Workbench to create a database schema with a single table.
-   * Be sure to create a _appusername_@localhost account with a password for your database.
-   * Include some initial sample data.
-1. Create a Gradle Project for your JPA entity and tests.
-1. Create a Spring Boot project for your REST API controller(s), service, and Spring Data JPA repository.
-1. Create controller logic to perform the basic CRUD operations of a REST API.
-   * Test these routes using *Postman*
-1. Deploy your project to your EC2 instance, and link to it from your portfolio web site.
+2. Send asynchronous requests to your server using `http`.
+
+3. Use your service in your components controller to display your data.
+
+4. Build up Create/Read/Update/Delete functionality on the client.  
+
+5. Add functionality. Once your presentation for your get is working, add a function that uses the response data to present the data in some other form (For instance, total all of the hours you worked and calculate the amount of money you are owed. This would involve retrieving all of the "PunchCard" records, totaling their values, and displaying the total multiplied times your hourly rate somewhere on the page.)
 
 ### Goal
-
-Your objective for this project should be to do as much as you can. That is not to say as many features, but as much as you actually understand.
-
-Do not move onto the next step until you actually know what you just did and feel comfortable with what is happening. If you reach a point and are confused about what you are doing, or what you have done, ask questions, look for resources, or start over on that piece to ensure that you are comfortable with it.  
-
-Make sure to commit and push once you have an MVP with full CRUD operations working.
-
-##### Stretch Goals
-* JUnit tests for your repository, service, and controller layers.
-* Supplemental tables, mappings, and controller routes for nested CRUD.
+Your objective for this project should be to do as much as you can. That is not to say as many features, but as much as you actually understand. Do not move onto the next step until you actually know what you just did and feel comfortable with what is happening. If you reach a point and are confused about what you are doing, or what you have done, ask questions, look for resources, or start over on that piece to ensure that you are comfortable with it.  For some of you DOM manipulation will be tricky to conceptualize, others will struggle with `http` and the nature of asynchrony/promises, and some will have a hard time conceptualizing JSON as a representation of objects and feel uncomfortable routing with it. All of these difficulties are understandable and the reason we are doing this project is to struggle through them.
 
 #### Grading
-
 This is a graded project.  You are expected to have your project completed by noon on Monday.  
-
-Your project must be pushed to a Github repo named **EventTrackerProject**.
-
-You must include a _README.md_ that describes your program and how to access it on AWS.  This must document your REST route URIs and HTTP methods, and what they do.
-
-You must also deploy your app to your AWS server.
 
 You will be given either a pass or fail based on whether your code works given all of the following test conditions:
 
-  * A new event object implements full CRUD.  
-  * All interactions with the database are done so RESTfully.  
+* A new event object implements full CRUD.  
+* All interactions with the database are done so RESTfully.  
+* App uses angular to access data and manipulate the DOM.
+* App presents the aggregated data in some additional format.
 
 If the project does work with all of the above test conditions, you will be given a *1* for this week's project.
 
@@ -69,11 +46,7 @@ If the project does not work with the above test conditions, you will be given a
 
 If you get a zero on the project, you can upgrade to a score of *.5* if you turn in a working project by the start of class the following Monday morning AND notify an instructor that you wish to get partial credit.
 
-
-#### Deployment
-*  [Deploying Spring Boot Apps](bootDeployment.md)
-
-<hr>
+To turn in a project, you must push it to GitHub.  You must also deploy it to your AWS server. You must include a README.md that describes your program and how to access it on AWS.
 
 
 

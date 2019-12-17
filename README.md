@@ -1,6 +1,6 @@
 # Flight Tracker Project
 
-### Project Requirements>
+### Project Requirements
 
 ### Overview
 'Event Tracker' is a broad term for anything that keeps track of information over time. Examples of these applications are 'Mint' (financial tracking) and 'MyFitnessPal' (diet and exercise tracker). These are very involved applications with a huge feature set. You are embarking on a weekend project that you may or may not come back to afterwards, thus we would caution you to limit your scope significantly. Examples of limited scope would be 'Gas Tracker' (keep track of your fill ups and total mileage to determine dollar/gallon in your car) or 'Timesheet' (track time in and time out to calculate total hours at some rate of pay).  
@@ -92,8 +92,13 @@ Object-Oriented Programming in Java: Abstraction, Polymorphism, Inheritance, and
 
 Test Driven Development using JUNIT 5 Juniper.
 
+Angular 
+
+Spring Security
+
 ### Lessons learned:
 
 * Implemented understanding of RESTful Api's application with the use of Repositories and Services.
 * Created tables in MySQL workbench, learned to be mindful of table item types, specially working with LocalDateTime, it is imperative to specify the correct data type both in SQL and in Java Entity to prevent conflicts.
-* Entity mapping for bean creation, I spend a lot of time debugging my entity, making sure that Spring JPA could communicate appropriately with my database.  
+* Entity mapping for bean creation, I spend a lot of time debugging my entity, making sure that Spring JPA could communicate appropriately with my database.
+

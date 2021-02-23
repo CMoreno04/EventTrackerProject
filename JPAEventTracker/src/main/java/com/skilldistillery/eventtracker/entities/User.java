@@ -11,9 +11,13 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+
+
 
 @Entity
 @Table(name = "user")
+@AllArgsConstructor
 public class User {
 
 	@Id
@@ -36,15 +40,6 @@ public class User {
 
 	public User() {
 		super();
-	}
-
-	public User(String email, String username, String password, boolean enabled, String role) {
-		super();
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.enabled = enabled;
-		this.role = role;
 	}
 
 	public int getId() {

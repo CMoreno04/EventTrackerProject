@@ -41,6 +41,13 @@ dependencies {
   	compile "log4j:log4j:1.2.17"
   	compile "org.hibernate:hibernate-core:$hibernateVersion"
   	compile "org.hibernate:hibernate-c3p0:$hibernateVersion"
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+	  annotationProcessor 'org.projectlombok:lombok:1.18.16'
+	
+	  testCompileOnly 'org.projectlombok:lombok:1.18.16'
+	  testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+
   
   	testImplementation("org.junit.jupiter:junit-jupiter:$junit5Version")
 }

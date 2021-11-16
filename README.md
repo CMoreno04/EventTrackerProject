@@ -30,26 +30,6 @@ Last weekend we wrote the backend for our API that performed full CRUD on an eve
 ### Goal
 Your objective for this project should be to do as much as you can. That is not to say as many features, but as much as you actually understand. Do not move onto the next step until you actually know what you just did and feel comfortable with what is happening. If you reach a point and are confused about what you are doing, or what you have done, ask questions, look for resources, or start over on that piece to ensure that you are comfortable with it.  For some of you DOM manipulation will be tricky to conceptualize, others will struggle with `http` and the nature of asynchrony/promises, and some will have a hard time conceptualizing JSON as a representation of objects and feel uncomfortable routing with it. All of these difficulties are understandable and the reason we are doing this project is to struggle through them.
 
-#### Grading
-This is a graded project.  You are expected to have your project completed by noon on Monday.  
-
-You will be given either a pass or fail based on whether your code works given all of the following test conditions:
-
-* A new event object implements full CRUD.  
-* All interactions with the database are done so RESTfully.  
-* App uses angular to access data and manipulate the DOM.
-* App presents the aggregated data in some additional format.
-
-If the project does work with all of the above test conditions, you will be given a *1* for this week's project.
-
-If the project does not work with the above test conditions, you will be given a *0* for this week's project.
-
-If you get a zero on the project, you can upgrade to a score of *.5* if you turn in a working project by the start of class the following Monday morning AND notify an instructor that you wish to get partial credit.
-
-To turn in a project, you must push it to GitHub.  You must also deploy it to your AWS server. You must include a README.md that describes your program and how to access it on AWS.
-
-
-
 ### Overview:
 This program is a simple flight event tracker, using Spring Boot, Spring Data JPA, and RestAPI the project currently has no front-end.
 
